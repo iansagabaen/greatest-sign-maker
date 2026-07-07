@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Greatest Sign Maker | Ian Sagabaen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Roboto Slab"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            colors: {
+              'athletics-green': '#003831',
+              'athletics-gold': '#EFB21E',
+              'athletics-gray': '#F0F0F0',
+              'white': '#FFFFFF',
+              'sign-navy': '#1a2a3a',
+              'sign-gold': '#EFB21E',
+              'sign-paper': '#f5f1eb',
+              'sign-ink': '#2c1810',
+            },
+            backgroundImage: {
+              'noise': "url('https://www.transparenttextures.com/patterns/stardust.png')",
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-in-out',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'width-expand': 'widthExpand 0.8s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              widthExpand: {
+                '0%': { width: '0' },
+                '100%': { width: '100%' },
+              },
+            },
+            transitionDelay: {
+              '100': '100ms',
+              '200': '200ms',
+              '300': '300ms',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #003831;
+        color: #FFFFFF;
+      }
+      .baseball-stitch {
+        border-top: 2px dashed #EFB21E;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
