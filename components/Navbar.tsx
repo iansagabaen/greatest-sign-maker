@@ -24,6 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
     { id: SectionId.METHODOLOGY, label: 'Methodology' },
     { id: SectionId.GALLERY, label: 'The Archive' },
     { id: SectionId.STATUS, label: 'Legacy' },
+    { id: SectionId.PRESS, label: 'Press' },
     { id: SectionId.CONTACT, label: 'Social' },
   ];
 

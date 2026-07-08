@@ -5,6 +5,7 @@ import Origin from './components/Origin';
 import Methodology from './components/Methodology';
 import Gallery from './components/Gallery';
 import Status from './components/Status';
+import Press from './components/Press';
 import Footer from './components/Footer';
 import { SectionId } from './types';
 
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         <Methodology />
         <Gallery />
         <Status />
+        <Press />
       </main>
       
       <Footer />

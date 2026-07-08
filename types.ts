@@ -21,5 +21,6 @@ export enum SectionId {
   GALLERY = 'gallery',
   WORKSHOP = 'workshop',
   STATUS = 'status',
+  PRESS = 'press',
   CONTACT = 'contact'
 }
