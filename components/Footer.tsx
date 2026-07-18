@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionId } from '../types';
-import { Twitter, Instagram, Coffee } from 'lucide-react';
+import { Twitter, Instagram, Coffee, MessageSquare } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -25,14 +25,21 @@ const Footer: React.FC = () => {
             <Instagram className="w-5 h-5" />
             Instagram
           </a>
-          <a 
-            href="http://twitter.com/gr8estsignmaker" 
-            target="_blank" 
+          <a
+            href="http://twitter.com/gr8estsignmaker"
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-white/10 hover:bg-athletics-gold hover:text-athletics-green px-6 py-3 rounded-full transition-all font-bold tracking-wide"
           >
             <Twitter className="w-5 h-5" />
             Twitter
+          </a>
+          <a
+            href="mailto:iansagabaen@gmail.com?subject=Greatest%20Sign%20Maker%20Feedback"
+            className="flex items-center gap-2 bg-white/10 hover:bg-athletics-gold hover:text-athletics-green px-6 py-3 rounded-full transition-all font-bold tracking-wide"
+          >
+            <MessageSquare className="w-5 h-5" />
+            Send Feedback
           </a>
         </div>
 

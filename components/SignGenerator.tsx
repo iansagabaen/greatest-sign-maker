@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SectionId, SignConcept } from '../types';
 import { generateSignConcept } from '../services/geminiService';
+import { trackEvent } from '../services/analytics';
 import { Sparkles, Loader2, Paintbrush } from 'lucide-react';
 
 const SignGenerator: React.FC = () => {
@@ -20,12 +21,15 @@ const SignGenerator: React.FC = () => {
     setLoading(true);
     setError('');
     setConcept(null);
+    trackEvent('workshop_concept_requested', { businessType: formData.type, vibe: formData.vibe });
 
     try {
       const result = await generateSignConcept(formData.businessName, formData.type, formData.vibe);
       setConcept(result);
+      trackEvent('workshop_concept_generated', { businessType: formData.type });
     } catch (err) {
       setError('The spirits of the sign workshop are quiet. Please try again later.');
+      trackEvent('workshop_concept_failed', { businessType: formData.type });
     } finally {
       setLoading(false);
     }
