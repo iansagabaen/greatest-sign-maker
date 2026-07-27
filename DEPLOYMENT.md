@@ -54,16 +54,7 @@ Replace `YOUR_USERNAME` with your actual GitHub username.
    - **Publish directory:** `dist`
 6. Click **"Deploy site"**
 
-### Step 3: Add Environment Variable
-
-1. In Netlify dashboard, go to **Site Settings → Build & Deploy → Environment**
-2. Click **"Edit variables"**
-3. Add new variable:
-   - **Key:** `GEMINI_API_KEY`
-   - **Value:** Your API key from [aistudio.google.com](https://aistudio.google.com)
-4. Trigger a **Manual Deploy** to rebuild with the new key
-
-### Step 4: Optional — Add Custom Domain
+### Step 3: Optional — Add Custom Domain
 
 1. In Site Settings → Domain Management
 2. Click **"Add custom domain"**
@@ -85,8 +76,7 @@ Replace `YOUR_USERNAME` with your actual GitHub username.
 2. Click **"New Project"**
 3. Select your GitHub repo
 4. Vercel auto-detects React + Vite settings
-5. Add environment variable `GEMINI_API_KEY`
-6. Click **"Deploy"**
+5. Click **"Deploy"**
 
 Same workflow as Netlify, different platform. Choose whichever you prefer.
 
@@ -110,7 +100,7 @@ git push origin main
 ```
 
 **Pros:** Free forever, no external dependencies
-**Cons:** Static only (Gemini API calls work from frontend, but slower), no CDN
+**Cons:** No server-side rendering, no CDN
 
 ---
 
@@ -121,8 +111,6 @@ Before deploying, verify:
 - [ ] Run `npm run build` locally — no errors
 - [ ] Check `dist/` folder is created
 - [ ] Test locally: `npm run dev` works on `localhost:3002`
-- [ ] Have your Gemini API key ready (from [aistudio.google.com](https://aistudio.google.com))
-- [ ] Test AI Workshop form locally
 
 ---
 
@@ -132,13 +120,9 @@ After your site is live, check:
 
 1. **Visit your live URL** (e.g., `https://greatestsignmaker.netlify.app`)
 2. **Test navigation:** Click through all sections, verify smooth scroll works
-3. **Test AI Workshop:**
-   - Fill in Business Name, Type, and Vibe
-   - Click "Generate Concept"
-   - Should show a colorful concept card (or error if API key missing)
-4. **Test external links:** Click Instagram, Twitter, MBA.com links
-5. **Check responsive design:** View on mobile (use Chrome DevTools)
-6. **Check console for errors:** Open DevTools (F12) → Console tab, look for red errors
+3. **Test external links:** Click Instagram, Twitter, MBA.com links
+4. **Check responsive design:** View on mobile (use Chrome DevTools)
+5. **Check console for errors:** Open DevTools (F12) → Console tab, look for red errors
 
 ---
 
@@ -151,12 +135,6 @@ kill -9 $(lsof -t -i :3002)
 npm run build
 ```
 
-### Gemini API not responding after deploy
-- Verify you set the `GEMINI_API_KEY` environment variable in your hosting platform
-- Check the key is valid at [aistudio.google.com](https://aistudio.google.com)
-- Netlify: Settings → Build & Deploy → Environment → verify key is there
-- Vercel: Project Settings → Environment Variables → verify key is there
-
 ### Images not loading
 - Check `imageConfig.ts` — all URLs should be full HTTPS paths
 - Test URLs in browser directly to verify they're accessible
@@ -168,21 +146,6 @@ Current build is ~220KB JS (acceptable). If you need to optimize:
 npm run build -- --sourcemap
 # Check dist/ folder size with: du -sh dist/
 ```
-
----
-
-## Environment Variables Explained
-
-### Local Development (`.env.local`)
-```
-GEMINI_API_KEY=sk-proj-xxx...
-```
-File is `.gitignore`'d — only you see it locally.
-
-### Production (Netlify/Vercel/etc.)
-Set via dashboard (NOT in `.env.local` — that doesn't deploy).
-
-**Why separate?** Security — you never commit API keys to GitHub.
 
 ---
 
@@ -203,7 +166,6 @@ If you own `greatestsignmaker.com`:
 
 ### Weekly
 - Check deployment logs (Netlify Dashboard → Deploys)
-- Test AI Workshop if you're actively using it
 
 ### When you update code
 ```bash
@@ -224,7 +186,6 @@ git push origin main
 ## Support
 
 - **Netlify Issues:** [docs.netlify.com](https://docs.netlify.com)
-- **Gemini API Issues:** [ai.google.dev](https://ai.google.dev)
 - **React Issues:** [react.dev/docs](https://react.dev/docs)
 
 ---

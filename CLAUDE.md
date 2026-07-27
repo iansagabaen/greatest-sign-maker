@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a React 19 + Vite marketing website for Ian Sagabaen's MLB sign-making legacy (2012–2026). It combines storytelling, visual branding, and an AI-powered sign concept generator.
+This is a React 19 + Vite marketing website for Ian Sagabaen's MLB sign-making legacy (2012–2026). It's an archive of his past MLB sign-making work plus an explanation of his process — combining storytelling and visual branding, not an interactive tool.
 
 **Status:** Ready to deploy | Local dev running on `localhost:3002`
 
@@ -22,7 +22,6 @@ This is a React 19 + Vite marketing website for Ian Sagabaen's MLB sign-making l
 ### Local Development
 ```bash
 npm install
-# Create .env.local with your Gemini API key from https://aistudio.google.com
 npm run dev
 # Opens on localhost:3002
 ```
@@ -53,13 +52,10 @@ npm run build
 │   ├── Origin.tsx          # Origin story (2012–2013)
 │   ├── Methodology.tsx     # Design approach & hardware
 │   ├── Gallery.tsx         # Sign archive gallery
-│   ├── SignGenerator.tsx   # AI concept generator (Gemini)
 │   ├── Status.tsx          # Legacy/fandom section
 │   ├── Story.tsx           # Extended story template (optional)
 │   └── Footer.tsx          # Footer with links
-├── services/
-│   └── geminiService.ts    # Google Gemini API integration
-├── types.ts                # TypeScript types (SectionId, SignConcept, etc.)
+├── types.ts                # TypeScript types (SectionId, etc.)
 ├── imageConfig.ts          # Image paths (centralized)
 ├── App.tsx                 # Main app component
 ├── index.tsx               # React DOM entry point
@@ -99,19 +95,13 @@ npm run build
 - Clickable for expanded view (Coming Soon)
 - Examples: FRANKIE, La Stella, Stephen Vogt, Coco Crisp, Sean Doolittle
 
-### 5. **AI Workshop** (SignGenerator.tsx)
-- Form: Business Name + Type + Vibe
-- Calls Gemini API with JSON schema
-- Output: Slogan, Visual Style, Color Palette, Typography
-- Error handling with brand-appropriate messaging
-
-### 6. **Navigation** (Navbar.tsx)
+### 5. **Navigation** (Navbar.tsx)
 - Fixed header with brand logo
 - Smooth scroll to sections
 - Fades from transparent to opaque on scroll
 - Responsive mobile menu (button placeholder)
 
-### 7. **Status Section** (Status.tsx)
+### 6. **Status Section** (Status.tsx)
 - Fandom credentials
 - Connection to A's community
 - Fan culture narrative
@@ -145,13 +135,6 @@ export const IMAGES = {
 };
 ```
 
-### AI Prompt
-Edit the prompt in `services/geminiService.ts`:
-```typescript
-contents: `You are The Greatest Sign Maker. Create a sign concept for a client.
-// Customize this prompt to change AI behavior
-```
-
 ### Section Navigation
 Sections are defined in `types.ts`:
 ```typescript
@@ -161,7 +144,6 @@ export enum SectionId {
   METHODOLOGY = 'methodology',
   GALLERY = 'gallery',
   STATUS = 'status',
-  WORKSHOP = 'workshop',
 }
 ```
 Add new sections here, then create component + add to App.tsx.
@@ -170,27 +152,14 @@ Add new sections here, then create component + add to App.tsx.
 
 ## Environment Variables
 
-### `.env.local` (Local Development)
-```
-GEMINI_API_KEY=your_api_key_from_aistudio.google.com
-```
-
-### Deployment Environment Variables
-When deploying, set `GEMINI_API_KEY` in your hosting platform's environment settings:
-- **Netlify:** Site Settings → Build & Deploy → Environment
-- **Vercel:** Project Settings → Environment Variables
-- **GitHub Pages:** Not supported (static only; requires backend proxy)
-
-**Security note:** API key is embedded in the frontend bundle. This is acceptable for low-traffic sites. For high-traffic production, consider a backend proxy.
+This project has no required environment variables. Optional PostHog analytics keys (`POSTHOG_KEY`, `POSTHOG_HOST`) can be set in `.env.local` — see that file's comments. The app runs fine without them.
 
 ---
 
 ## Maintenance Tasks
 
 ### Weekly
-- [ ] Check Gemini API quota/costs (if live)
 - [ ] Review console errors (Chrome DevTools)
-- [ ] Test AI workshop on deployed site
 
 ### Monthly
 - [ ] Update gallery with new sign concepts
@@ -199,8 +168,7 @@ When deploying, set `GEMINI_API_KEY` in your hosting platform's environment sett
 
 ### Before Deploying
 - [ ] Run `npm run build` and check output size
-- [ ] Test locally: all navigation, forms, responsive design
-- [ ] Verify Gemini API key is set in environment
+- [ ] Test locally: all navigation, responsive design
 - [ ] Check image URLs are valid
 - [ ] Update social links if changed
 
@@ -210,15 +178,13 @@ When deploying, set `GEMINI_API_KEY` in your hosting platform's environment sett
 
 ### Before First Deploy
 - [ ] Run `npm run build` locally and verify `dist/` folder
-- [ ] Set `GEMINI_API_KEY` in deployment platform
-- [ ] Test AI Workshop form post-deploy
 - [ ] Verify all external links work (Instagram, Twitter, MLB.com)
 - [ ] Check mobile responsiveness on actual device
 
 ### After Deploy
 - [ ] Share live URL
 - [ ] Monitor for errors (check browser console on live site)
-- [ ] Test all interactive features (navigation, AI workshop, links)
+- [ ] Test all interactive features (navigation, links)
 
 ---
 
@@ -241,12 +207,6 @@ rm -rf node_modules package-lock.json
 npm install
 npm run build
 ```
-
-### Gemini API Not Working
-- Verify `.env.local` has correct key
-- Check API key has Gemini 2.5 Flash enabled
-- Test in AI Studio first: https://aistudio.google.com
-- Check browser console for exact error
 
 ### Images Not Loading
 - Verify URLs in `imageConfig.ts` are correct
@@ -281,7 +241,6 @@ Connect GitHub repo to Netlify/Vercel → auto-deploys on `git push origin main`
 - Acceptable for a portfolio site
 
 ### Optimization Opportunities (if needed)
-- Code split AI Workshop component (lazy load)
 - Optimize hero image (use WebP, compress)
 - Minify gallery image list
 - Remove unused Tailwind utilities
@@ -296,10 +255,9 @@ Not currently integrated. To add:
 
 ## Known Limitations
 
-1. **AI Workshop:** Requires valid Gemini API key. If key is invalid/missing, shows: "The spirits of the sign workshop are quiet."
-2. **Static Images:** All images must be external URLs or imported in HTML. No local image files supported in this Vite setup.
-3. **Mobile Menu:** Navbar button is placeholder. Mobile menu toggle not fully implemented (low priority).
-4. **Gallery:** "Click specific signs to see original context" is marked (Coming Soon) — expand modal not implemented.
+1. **Static Images:** All images must be external URLs or imported in HTML. No local image files supported in this Vite setup.
+2. **Mobile Menu:** Navbar button is placeholder. Mobile menu toggle not fully implemented (low priority).
+3. **Gallery:** "Click specific signs to see original context" is marked (Coming Soon) — expand modal not implemented.
 
 ---
 
@@ -317,7 +275,6 @@ See `/Users/ian/my-projects/projects.md` (Greatest Sign Maker section) for full 
 
 ## Resources
 
-- **Google Gemini API docs:** https://ai.google.dev/
 - **React 19 docs:** https://react.dev/
 - **Vite docs:** https://vitejs.dev/
 - **Tailwind CSS docs:** https://tailwindcss.com/
