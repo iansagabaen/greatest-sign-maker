@@ -103,7 +103,7 @@ const Gallery: React.FC = () => {
             subtitle="Executive of the Decade"
             variant="generic"
             reference="Fictional baseball card — led to meeting Beane in person at Fan Fest"
-            imageUrl="/images/billy-beane-card.png"
+            imageUrl="/images/billy-beane-card.jpg"
             imageAlt="Photoshopped Billy Beane 'Executive of the Decade' baseball card"
           />
           <DigitalSign

@@ -26,7 +26,7 @@ const PRESS_ITEMS: PressItem[] = [
       `I hadn't planned for it to go anywhere beyond a few laughs at the ballpark. But the post picked up real traction for a small blog item — 10 tweets, 15 +1's, and 155 Facebook likes, plus 22 comments, enough that it briefly landed on MLB.com's homepage. Friends and fellow fans flooded the comments to congratulate me. I posted my own reply in the thread, which is still the best summary of how it felt at the time: "Yay, I made the blog! Thanks for the opportunity!"`,
       `I bought the greatestsignmaker.com domain that same night. Everything that followed — the studio piece, the cheer cards, the years of gameday signs — traces back to this one post.`,
     ],
-    imageUrl: '/images/original-mlb-post-2012.png',
+    imageUrl: '/images/original-mlb-post-2012.jpg',
     imageAlt: "Screenshot of the original April 10, 2012 MLB.com Cut4 post, 'Ian Sagabaen has to be greatest sign-maker in MLB history'",
     sourceNote: "The original page (mlb.mlb.com/cutfour/article.jsp?content_id=28302004) is long gone — the domain no longer resolves, and the Wayback Machine never archived it. This screenshot, taken the night it was posted, is the only surviving copy.",
   },
