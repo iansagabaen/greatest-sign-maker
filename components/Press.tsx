@@ -8,11 +8,28 @@ interface PressItem {
   byline: string;
   date: string;
   paragraphs: string[];
-  liveUrl: string;
-  archiveUrl: string;
+  liveUrl?: string;
+  archiveUrl?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  sourceNote?: string;
 }
 
 const PRESS_ITEMS: PressItem[] = [
+  {
+    title: "Ian Sagabaen Has to Be Greatest Sign-Maker in MLB History",
+    outlet: 'MLB.com — Cut4',
+    byline: 'Staff',
+    date: 'April 10, 2012',
+    paragraphs: [
+      `This is the post that started everything. Posted at 1:32 AM on April 10, 2012, it ran under the headline "Ian Sagabaen has to be greatest sign-maker in MLB history" and featured three of my early signs, including the Brick Tamland "LET'S GO OAKLAND" poster (the caption on that one: "Who knew Brick Tamland was such a big A's fan?"), alongside a baseball-perspective sign and a "CACTUS LEAGUE WORLD CHAMPS 2012" sign from spring training.`,
+      `I hadn't planned for it to go anywhere beyond a few laughs at the ballpark. But the post picked up real traction for a small blog item — 10 tweets, 15 +1's, and 155 Facebook likes, plus 22 comments, enough that it briefly landed on MLB.com's homepage. Friends and fellow fans flooded the comments to congratulate me. I posted my own reply in the thread, which is still the best summary of how it felt at the time: "Yay, I made the blog! Thanks for the opportunity!"`,
+      `I bought the greatestsignmaker.com domain that same night. Everything that followed — the studio piece, the cheer cards, the years of gameday signs — traces back to this one post.`,
+    ],
+    imageUrl: '/images/original-mlb-post-2012.png',
+    imageAlt: "Screenshot of the original April 10, 2012 MLB.com Cut4 post, 'Ian Sagabaen has to be greatest sign-maker in MLB history'",
+    sourceNote: "The original page (mlb.mlb.com/cutfour/article.jsp?content_id=28302004) is long gone — the domain no longer resolves, and the Wayback Machine never archived it. This screenshot, taken the night it was posted, is the only surviving copy.",
+  },
   {
     title: "Step Inside the Studio of Baseball's Greatest Sign Maker",
     outlet: 'MLB.com — Cut4',
@@ -39,6 +56,8 @@ const PRESS_ITEMS: PressItem[] = [
     ],
     liveUrl: 'https://www.mlb.com/cut4/ill-never-run-on-reddick-again-as-give-out-careless-whisper-cheer-cards/c-77017428',
     archiveUrl: 'https://web.archive.org/web/20260708050813/https://www.mlb.com/cut4/ill-never-run-on-reddick-again-as-give-out-careless-whisper-cheer-cards/c-77017428',
+    imageUrl: '/images/careless-whisper-cheer-card.jpg',
+    imageAlt: "The 'Careless Whisper' Josh Reddick cheer card given out at the Coliseum, Memorial Day 2014",
   },
 ];
 
@@ -58,7 +77,7 @@ const Press: React.FC = () => {
         <div className="flex flex-col gap-16">
           {PRESS_ITEMS.map((item) => (
             <article
-              key={item.liveUrl}
+              key={item.title}
               className="bg-white/5 border border-white/10 rounded-lg p-8 md:p-12"
             >
               <div className="flex items-center gap-2 text-athletics-gold text-xs font-bold uppercase tracking-widest mb-4">
@@ -66,31 +85,54 @@ const Press: React.FC = () => {
                 {item.outlet} &middot; {item.byline} &middot; {item.date}
               </div>
               <h3 className="font-serif font-bold text-3xl md:text-4xl mb-6 leading-snug">{item.title}</h3>
+
+              {item.imageUrl && (
+                <div className="mb-8 rounded-lg overflow-hidden border border-white/10 shadow-xl">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.imageAlt || item.title}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              )}
+
+              {item.sourceNote && (
+                <div className="border-l-4 border-athletics-gold bg-black/20 rounded-r px-5 py-4 mb-8 text-sm text-white/70 italic">
+                  {item.sourceNote}
+                </div>
+              )}
+
               <div className="text-white/70 font-sans leading-loose space-y-5 mb-10">
                 {item.paragraphs.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href={item.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-athletics-gold text-athletics-green px-5 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Read on MLB.com
-                </a>
-                <a
-                  href={item.archiveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/10 text-white px-5 py-2 rounded-full font-bold text-sm hover:bg-white/20 transition-colors"
-                >
-                  <Archive className="w-4 h-4" />
-                  Archived Copy
-                </a>
-              </div>
+              {(item.liveUrl || item.archiveUrl) && (
+                <div className="flex flex-wrap gap-4">
+                  {item.liveUrl && (
+                    <a
+                      href={item.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-athletics-gold text-athletics-green px-5 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Read on MLB.com
+                    </a>
+                  )}
+                  {item.archiveUrl && (
+                    <a
+                      href={item.archiveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 bg-white/10 text-white px-5 py-2 rounded-full font-bold text-sm hover:bg-white/20 transition-colors"
+                    >
+                      <Archive className="w-4 h-4" />
+                      Archived Copy
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>

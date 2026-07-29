@@ -44,7 +44,7 @@ const Origin: React.FC = () => {
           <div className="relative group overflow-hidden rounded-lg shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
             <img 
               src={IMAGES.originFeature}
-              alt="Pitcher's Mound View" 
+              alt="The invite graphic for Ian's April 2013 first pitch"
               className="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
             />
             

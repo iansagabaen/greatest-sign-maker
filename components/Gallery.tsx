@@ -6,9 +6,11 @@ interface SignProps {
   subtitle?: string;
   reference?: string;
   variant: 'frankie' | 'lastella' | 'coco' | 'vogt' | 'generic';
+  imageUrl?: string;
+  imageAlt?: string;
 }
 
-const DigitalSign: React.FC<SignProps> = ({ title, subtitle, reference, variant }) => {
+const DigitalSign: React.FC<SignProps> = ({ title, subtitle, reference, variant, imageUrl, imageAlt }) => {
   const getStyles = () => {
     switch (variant) {
       case 'frankie':
@@ -27,29 +29,41 @@ const DigitalSign: React.FC<SignProps> = ({ title, subtitle, reference, variant 
   return (
     <div className="group perspective-1000 cursor-pointer">
       <div className={`
-        relative aspect-[4/3] p-6 flex flex-col items-center justify-center text-center shadow-xl 
+        relative aspect-[4/3] shadow-xl overflow-hidden
         transition-all duration-500 transform group-hover:rotate-y-12 group-hover:scale-105
-        ${getStyles()}
+        ${imageUrl ? '' : `p-6 flex flex-col items-center justify-center text-center ${getStyles()}`}
       `}>
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={imageAlt || title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : null}
+
         {/* Shine Effect */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
-        <h3 className="text-4xl md:text-5xl leading-none z-10 drop-shadow-sm">
-          {title}
-        </h3>
-        {subtitle && (
+        {!imageUrl && (
           <>
-            <div className="w-12 h-1 bg-current my-3 opacity-50"></div>
-            <p className="text-xl md:text-2xl z-10 uppercase tracking-wide">{subtitle}</p>
+            <h3 className="text-4xl md:text-5xl leading-none z-10 drop-shadow-sm">
+              {title}
+            </h3>
+            {subtitle && (
+              <>
+                <div className="w-12 h-1 bg-current my-3 opacity-50"></div>
+                <p className="text-xl md:text-2xl z-10 uppercase tracking-wide">{subtitle}</p>
+              </>
+            )}
+
+            {/* Spec Label */}
+            <div className="absolute bottom-2 right-2 text-[10px] opacity-40 font-sans font-normal tracking-tighter">
+              20" x 30" FOAM CORE
+            </div>
           </>
         )}
-        
-        {/* Spec Label */}
-        <div className="absolute bottom-2 right-2 text-[10px] opacity-40 font-sans font-normal tracking-tighter">
-          20" x 30" FOAM CORE
-        </div>
       </div>
-      
+
       {/* Reference Caption */}
       <div className="mt-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <p className="text-xs font-mono text-athletics-green/60 uppercase tracking-widest">{reference}</p>
@@ -76,8 +90,31 @@ const Gallery: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          <DigitalSign 
-            title="FRANKIE" 
+          <DigitalSign
+            title="Brick Tamland"
+            subtitle="LET'S GO OAKLAND"
+            variant="generic"
+            reference='"One of the very first signs I&rsquo;ve ever made, and definitely my most popular." &mdash; @greatestsignmaker'
+            imageUrl="/images/brick-tamland-lets-go-oakland.jpg"
+            imageAlt="Brick Tamland (Anchorman) 'LET'S GO OAKLAND' poster, in an A's tie"
+          />
+          <DigitalSign
+            title="Billy Beane"
+            subtitle="Executive of the Decade"
+            variant="generic"
+            reference="Fictional baseball card — led to meeting Beane in person at Fan Fest"
+            imageUrl="/images/billy-beane-card.png"
+            imageAlt="Photoshopped Billy Beane 'Executive of the Decade' baseball card"
+          />
+          <DigitalSign
+            title="Pen Pals"
+            variant="generic"
+            reference='"Signed by Ryan Cook, handed off to Grant Balfour & Sean Doolittle." &mdash; @greatestsignmaker'
+            imageUrl="/images/pen-pals-bullpen.jpg"
+            imageAlt="'Pen Pals' collage of 2013 A's bullpen pitchers, signed by Grant Balfour and teammates"
+          />
+          <DigitalSign
+            title="FRANKIE"
             subtitle="SAY RELAX" 
             variant="frankie" 
             reference="Re: Frankie Montas / Zoolander"

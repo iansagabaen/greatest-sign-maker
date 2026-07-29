@@ -13,7 +13,7 @@ export const IMAGES = {
   heroBackground: "https://images.unsplash.com/photo-1531663787764-dbd5117a31ac?q=80&w=2670&auto=format&fit=crop",
   
   // The image in the "Origin Story" section (Pitcher's mound or first pitch)
-  originFeature: "https://images.unsplash.com/photo-1562077772-3bd305261997?q=80&w=1000&auto=format&fit=crop",
+  originFeature: "/images/first-pitch-invite-2013.png",
   
   // The image in the "Legacy/Status" section (Crowd shot or you in bleachers)
   statusFeature: "https://images.unsplash.com/photo-1504124630217-d8a9e41e1a02?q=80&w=1000&auto=format&fit=crop",

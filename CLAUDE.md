@@ -90,10 +90,9 @@ npm run build
 - Legibility approach (broadcast camera distance)
 
 ### 4. **Digital Archive** (Gallery.tsx)
-- Gallery grid of sign concepts
-- Each sign: title, size, context
+- Gallery grid mixing real archive photos (Brick Tamland, Billy Beane card, Pen Pals bullpen collage) with stylized text/CSS recreations (FRANKIE, La Stella, Stephen Vogt, Coco Crisp, Sean Doolittle)
+- Each sign: title, size/context, or a real photo with caption
 - Clickable for expanded view (Coming Soon)
-- Examples: FRANKIE, La Stella, Stephen Vogt, Coco Crisp, Sean Doolittle
 
 ### 5. **Navigation** (Navbar.tsx)
 - Fixed header with brand logo
@@ -255,7 +254,7 @@ Not currently integrated. To add:
 
 ## Known Limitations
 
-1. **Static Images:** All images must be external URLs or imported in HTML. No local image files supported in this Vite setup.
+1. **Static Images:** Local images now supported via `public/images/` (Vite serves this at the site root — reference as `/images/filename.ext` in `imageConfig.ts`, no import needed). External URLs still work too.
 2. **Mobile Menu:** Navbar button is placeholder. Mobile menu toggle not fully implemented (low priority).
 3. **Gallery:** "Click specific signs to see original context" is marked (Coming Soon) — expand modal not implemented.
 
@@ -267,7 +266,6 @@ Not currently integrated. To add:
 2. **Add media kit/press page** with MLB.com Cut4 links (1–2 hrs)
 3. **Add credibility badges** (As seen in: MLB.com, Oakland A's) (30 min)
 4. **Link social profiles** prominently (15 min)
-5. **Add snagged baseballs stat** to legacy section (15 min)
 
 See `/Users/ian/my-projects/projects.md` (Greatest Sign Maker section) for full context and research links.
 
