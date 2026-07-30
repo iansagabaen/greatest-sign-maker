@@ -126,7 +126,18 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
-          <p>&copy; {new Date().getFullYear()} Ian Sagabaen.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Ian Sagabaen. See more of my work at{' '}
+            <a
+              href="https://iansagabaen.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-athletics-gold transition-colors"
+            >
+              iansagabaen.com
+            </a>
+            .
+          </p>
           <div className="flex items-center gap-2 mt-4 md:mt-0">
             <Coffee className="w-4 h-4" />
             <span>I still owe Susan Slusser a coffee.</span>

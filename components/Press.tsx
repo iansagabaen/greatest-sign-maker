@@ -7,7 +7,7 @@ interface PressItem {
   outlet?: string;
   byline?: string;
   date: string;
-  paragraphs: string[];
+  paragraphs: React.ReactNode[];
   liveUrl?: string;
   archiveUrl?: string;
   imageUrl?: string;
@@ -60,7 +60,18 @@ const PRESS_ITEMS: PressItem[] = [
     byline: 'Mike Bertha',
     date: 'May 27, 2014',
     paragraphs: [
-      `This one has a more specific, funnier hook. Earlier in the 2014 season, Josh Reddick had switched his walk-up music to Wham!'s "Careless Whisper" — right as the song was having an odd cultural moment thanks to a viral video of a shirtless prankster playing it on saxophone in public. Cut4's piece sets that scene first: every time Reddick came to the plate at the Coliseum, the right-field bleachers would rise up and mime playing air-saxophone along with the PA.`,
+      <>
+        This one has a more specific, funnier hook. Earlier in the 2014 season, Josh Reddick had switched his walk-up music to Wham!'s{' '}
+        <a
+          href="https://www.youtube.com/watch?v=izGwDsrQ1eQ"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-athletics-gold underline hover:text-white transition-colors"
+        >
+          "Careless Whisper"
+        </a>{' '}
+        — right as the song was having an odd cultural moment thanks to a viral video of a shirtless prankster playing it on saxophone in public. Cut4's piece sets that scene first: every time Reddick came to the plate at the Coliseum, the right-field bleachers would rise up and mime playing air-saxophone along with the PA.
+      </>,
       `That's where I came in. The A's organization brought me in directly — the piece calls me a "Cut4 friend" at that point, which tells you Cut4 already considered me a recurring character in their coverage, not a one-off. Together with the team, I designed an official "Careless Whisper" cheer card, handed out to fans at the Coliseum on Memorial Day 2014.`,
       `Cut4 tracked me down for comment while I was on vacation in Alaska, which the piece treats as a small running joke. In my own words from the piece, the concept came together fast: I'd been in the right-field bleachers the night Reddick debuted the song, and once the #CarelessWhisper moment took off among A's fans, I sketched a few directions before landing on the final image — dramatic clouds in the background, a composite portrait blending Reddick's face with George Michael's, and the saxophone itself as the central icon.`,
       `The piece also captures the practical reasoning behind making it a printed card rather than a novelty prop: I referenced my friend Omar and his interactive Coco Crisp "Afro sign" as prior inspiration, then explained that once fans were already miming invisible saxophones, an inflatable toy sax was the obvious next step — except a printed card accomplished the same bit with less inflating and was much easier to actually carry into a stadium. Written by Mike Bertha, the piece treats this less as a profile and more as a fun sidebar on a specific, weird moment of A's fan culture — with me as the person who gave that moment a physical object.`,
