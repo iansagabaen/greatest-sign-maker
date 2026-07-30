@@ -260,7 +260,7 @@ const Press: React.FC = () => {
               )}
 
               {item.images && (
-                <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className={`mb-8 grid grid-cols-1 gap-4 ${item.images.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'}`}>
                   {item.images.map((img, i) => (
                     <a
                       key={i}
@@ -272,7 +272,7 @@ const Press: React.FC = () => {
                       <img
                         src={img.url}
                         alt={img.alt}
-                        className="w-full h-64 object-cover"
+                        className="w-full h-64 object-contain bg-black/30"
                       />
                       {img.caption && (
                         <p className="text-xs font-mono uppercase tracking-widest text-white/50 px-3 py-2 bg-black/20">

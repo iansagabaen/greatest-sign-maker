@@ -12,11 +12,11 @@ const Status: React.FC = () => {
           <div className="order-2 md:order-1">
              <div className="relative group">
                 <div className="absolute inset-0 bg-athletics-gold transform translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
-                <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border-4 border-white">
+                <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border-4 border-white bg-athletics-green/20">
                     <img
                       src={IMAGES.statusFeature}
                       alt="Ian Sagabaen in an A's cap and jersey, holding an #OAKtober sign in the right-field bleachers at the Coliseum"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
 
                     <div className="absolute bottom-0 left-0 bg-athletics-gold px-4 py-2">
