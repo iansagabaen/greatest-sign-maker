@@ -2,6 +2,13 @@ import React from 'react';
 import { SectionId } from '../types';
 import { Newspaper, ExternalLink, Archive } from 'lucide-react';
 
+interface PressImage {
+  url: string;
+  alt: string;
+  caption?: string;
+  linkUrl?: string;
+}
+
 interface PressItem {
   title: string;
   outlet?: string;
@@ -15,6 +22,7 @@ interface PressItem {
   secondImageUrl?: string;
   secondImageAlt?: string;
   secondImageCaption?: string;
+  images?: PressImage[];
 }
 
 const PRESS_ITEMS: PressItem[] = [
@@ -72,7 +80,7 @@ const PRESS_ITEMS: PressItem[] = [
         </a>{' '}
         — right as the song was having an odd cultural moment thanks to a viral video of a shirtless prankster playing it on saxophone in public. Cut4's piece sets that scene first: every time Reddick came to the plate at the Coliseum, the right-field bleachers would rise up and mime playing air-saxophone along with the PA.
       </>,
-      `That's where I came in. The A's organization brought me in directly — the piece calls me a "Cut4 friend" at that point, which tells you Cut4 already considered me a recurring character in their coverage, not a one-off. Together with the team, I designed an official "Careless Whisper" cheer card, handed out to fans at the Coliseum on Memorial Day 2014.`,
+      `That's where I came in. The A's organization brought me in directly — the piece calls me a "Cut4 friend" at that point, which tells you Cut4 already considered me a recurring character in their coverage, not a one-off. Together with the team, I designed an official "Careless Whisper" cheer card, handed out to 5,000 fans at the Coliseum on Memorial Day 2014.`,
       `Cut4 tracked me down for comment while I was on vacation in Alaska, which the piece treats as a small running joke. In my own words from the piece, the concept came together fast: I'd been in the right-field bleachers the night Reddick debuted the song, and once the #CarelessWhisper moment took off among A's fans, I sketched a few directions before landing on the final image — dramatic clouds in the background, a composite portrait blending Reddick's face with George Michael's, and the saxophone itself as the central icon.`,
       `The piece also captures the practical reasoning behind making it a printed card rather than a novelty prop: I referenced my friend Omar and his interactive Coco Crisp "Afro sign" as prior inspiration, then explained that once fans were already miming invisible saxophones, an inflatable toy sax was the obvious next step — except a printed card accomplished the same bit with less inflating and was much easier to actually carry into a stadium. Written by Mike Bertha, the piece treats this less as a profile and more as a fun sidebar on a specific, weird moment of A's fan culture — with me as the person who gave that moment a physical object.`,
     ],
@@ -88,7 +96,7 @@ const PRESS_ITEMS: PressItem[] = [
     title: '"Ian (the Greatest Sign Maker) Saberhagen!!" — 50th Anniversary STM Stories',
     outlet: "Oakland Athletics — Season Ticket Member Newsletter",
     byline: "Oakland Athletics Front Office",
-    date: "circa 2017–18 (A's 50th Anniversary season in Oakland)",
+    date: "March 28, 2018",
     paragraphs: [
       `This one's a step up from blog coverage — an official feature from the A's front office themselves, part of a recurring "50th Anniversary STM Stories" segment celebrating the club's 50th season in Oakland by spotlighting Season Ticket Members. Getting picked for a segment like that meant the organization itself, not just a corner of the internet, had decided my sign-making was part of the fan story worth telling.`,
       `And they misspelled my last name while doing it — "Ian (the Greatest Sign Maker) Saberhagen," highlighted right there in the original. I'll be honest, I loved it. "Saberhagen" happens to belong to a real Hall of Fame-caliber pitcher, Bret Saberhagen, so getting knighted with a Cy Young winner's surname by accident felt like a bonus, not a mistake.`,
@@ -96,6 +104,35 @@ const PRESS_ITEMS: PressItem[] = [
     ],
     imageUrl: "/images/as-newsletter-feature-2018.jpg",
     imageAlt: "Screenshot of the Oakland Athletics '50th Anniversary STM Stories' newsletter segment featuring Ian, with his last name misspelled 'Saberhagen,' alongside a photo of him holding a Hall of Fame Race picket sign on the field",
+  },
+  {
+    title: "Recognition on Twitter",
+    date: "2014–2018",
+    paragraphs: [
+      `Not everything worth keeping came as a formal article. A few individual tweets over the years are just as good a marker of how far this whole thing traveled — proof that it wasn't just Cut4 and the team's own PR account being nice to me, but independent, unprompted recognition from people who had no reason to say anything at all.`,
+      `First, in May 2014, Vic Tafur — the San Francisco Chronicle's A's beat writer — quote-tweeted Cut4's "Careless Whisper" piece with a simple "nice job @Gr8estSignMaker," a real beat reporter vouching for the work in his own feed. A year later, the Athletics' own official account went further, tweeting straight at me that I "really is the Greatest Sign Maker," with a four-photo collage as the "PROOF." And in March 2018, when the team's newsletter (above) misspelled my last name as "Saberhagen," I couldn't resist screenshotting my own reaction — equal parts thank-you and correction, and the same tweet that pins down the newsletter's actual date.`,
+      `All three are captured here as real screenshots, not paraphrases — Twitter/X is exactly the kind of platform that could go down or lock me out one day, so these are worth having somewhere permanent.`,
+    ],
+    images: [
+      {
+        url: '/images/tweet-vic-tafur-2014.jpg',
+        alt: 'Tweet from SF Chronicle A\'s beat writer Vic Tafur quote-tweeting the Cut4 "Careless Whisper" piece and writing "nice job @Gr8estSignMaker," May 29, 2014',
+        caption: 'Vic Tafur (SF Chronicle) · May 29, 2014',
+        linkUrl: 'https://x.com/VicTafur/status/471910804946579456',
+      },
+      {
+        url: '/images/tweet-athletics-praise-2015.jpg',
+        alt: 'Tweet from the official Athletics account reading ".@Gr8estSignMaker really is the Greatest Sign Maker. LOOK! PROOF!" with a four-photo collage, May 28, 2015',
+        caption: '@Athletics · May 28, 2015',
+        linkUrl: 'https://x.com/Athletics/status/604156534201831424',
+      },
+      {
+        url: '/images/tweet-ians-newsletter-reaction-2018.jpg',
+        alt: 'Ian\'s own tweet reacting to the A\'s newsletter feature, joking about the "Saberhagen" misspelling, March 28, 2018',
+        caption: '@Gr8estSignMaker · March 28, 2018',
+        linkUrl: 'https://x.com/Gr8estSignMaker/status/979236140703039488',
+      },
+    ],
   },
 ];
 
@@ -146,6 +183,31 @@ const Press: React.FC = () => {
                       {item.secondImageCaption}
                     </p>
                   )}
+                </div>
+              )}
+
+              {item.images && (
+                <div className="mb-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  {item.images.map((img, i) => (
+                    <a
+                      key={i}
+                      href={img.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg overflow-hidden border border-white/10 shadow-xl hover:border-athletics-gold/60 transition-colors"
+                    >
+                      <img
+                        src={img.url}
+                        alt={img.alt}
+                        className="w-full h-auto object-cover"
+                      />
+                      {img.caption && (
+                        <p className="text-xs font-mono uppercase tracking-widest text-white/50 px-3 py-2 bg-black/20">
+                          {img.caption}
+                        </p>
+                      )}
+                    </a>
+                  ))}
                 </div>
               )}
 
