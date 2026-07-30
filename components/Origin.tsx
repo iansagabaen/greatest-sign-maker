@@ -42,19 +42,11 @@ const Origin: React.FC = () => {
           
           {/* Image representing the era */}
           <div className="relative group overflow-hidden rounded-lg shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
-            <img 
+            <img
               src={IMAGES.originFeature}
               alt="The invite graphic for Ian's April 2013 first pitch"
-              className="w-full h-[500px] object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              className="w-full h-[500px] object-cover"
             />
-            
-            {/* Overlay Card */}
-            <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur p-6 border-l-4 border-athletics-gold shadow-lg">
-               <h3 className="font-serif text-athletics-green font-bold text-2xl mb-1">April 2013</h3>
-               <p className="font-sans text-sm text-gray-600">
-                 The moment the standard was set. No more flimsy poster board.
-               </p>
-            </div>
           </div>
         </div>
 

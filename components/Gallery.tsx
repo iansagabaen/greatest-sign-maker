@@ -59,7 +59,6 @@ const Gallery: React.FC = () => {
           </h2>
           <p className="text-athletics-green/70 font-sans max-w-xl mx-auto">
             A digital recreation of the foam core collection.
-            <br/><span className="text-xs uppercase tracking-widest opacity-60">Click specific signs to see original context (Coming Soon)</span>
           </p>
         </div>
 

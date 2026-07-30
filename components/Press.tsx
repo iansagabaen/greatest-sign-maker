@@ -15,7 +15,6 @@ interface PressItem {
   secondImageUrl?: string;
   secondImageAlt?: string;
   secondImageCaption?: string;
-  sourceNote?: string;
 }
 
 const PRESS_ITEMS: PressItem[] = [
@@ -31,7 +30,6 @@ const PRESS_ITEMS: PressItem[] = [
     ],
     imageUrl: '/images/original-mlb-post-2012.jpg',
     imageAlt: "Screenshot of the original April 10, 2012 MLB.com Cut4 post, 'Ian Sagabaen has to be greatest sign-maker in MLB history'",
-    sourceNote: "The original page (mlb.mlb.com/cutfour/article.jsp?content_id=28302004) is long gone — the domain no longer resolves, and the Wayback Machine never archived it. This screenshot, taken the night it was posted, is the only surviving copy.",
   },
   {
     title: "Step Inside the Studio of Baseball's Greatest Sign Maker",
@@ -77,7 +75,6 @@ const PRESS_ITEMS: PressItem[] = [
     ],
     imageUrl: "/images/as-newsletter-feature-2018.jpg",
     imageAlt: "Screenshot of the Oakland Athletics '50th Anniversary STM Stories' newsletter segment featuring Ian, with his last name misspelled 'Saberhagen,' alongside a photo of him holding a Hall of Fame Race picket sign on the field",
-    sourceNote: "This is a screenshot preserved from an Oakland A's Season Ticket Member email newsletter, not a public webpage — there's no live URL to link to, so the image itself is the only surviving copy.",
   },
 ];
 
@@ -128,12 +125,6 @@ const Press: React.FC = () => {
                       {item.secondImageCaption}
                     </p>
                   )}
-                </div>
-              )}
-
-              {item.sourceNote && (
-                <div className="border-l-4 border-athletics-gold bg-black/20 rounded-r px-5 py-4 mb-8 text-sm text-white/70 italic">
-                  {item.sourceNote}
                 </div>
               )}
 
