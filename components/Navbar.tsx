@@ -31,7 +31,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-athletics-green/95 shadow-lg py-4 border-b border-athletics-gold' : 'bg-transparent py-6'
+        isScrolled ? 'bg-athletics-green/95 shadow-lg py-3 border-b border-athletics-gold' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -42,7 +42,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
           <img
             src="/logo.svg"
             alt="Greatest Sign Maker"
-            className="w-10 h-10 bg-white rounded-md p-0.5 border-2 border-white group-hover:scale-110 transition-transform"
+            className="h-20 w-auto bg-white rounded-md p-1.5 shadow-md group-hover:scale-110 transition-transform"
           />
         </div>
 
