@@ -127,14 +127,14 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-white/40">
           <p>
-            &copy; {new Date().getFullYear()} Ian Sagabaen. See more of my work at{' '}
+            &copy; {new Date().getFullYear()}{' '}
             <a
               href="https://iansagabaen.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-athletics-gold transition-colors"
             >
-              iansagabaen.com
+              Ian Sagabaen
             </a>
             .
           </p>
