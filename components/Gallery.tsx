@@ -49,9 +49,9 @@ const Gallery: React.FC = () => {
             imageAlt="Brick Tamland (Anchorman) 'LET'S GO OAKLAND' poster, in an A's tie"
           />
           <DigitalSign
-            reference="Fictional baseball card — led to meeting Beane in person at Fan Fest"
-            imageUrl="/images/billy-beane-card.jpg"
-            imageAlt="Photoshopped Billy Beane 'Executive of the Decade' baseball card"
+            reference="Celebrating the 2014 trade deadline: Cespedes for Lester + Gomes locked in a four-ace rotation"
+            imageUrl="/images/four-aces.jpg"
+            imageAlt="'Four Aces' playing-card poster of the A's 2014 starting rotation: Scott Kazmir, Sonny Gray, Jon Lester, and Jeff Samardzija"
           />
           <DigitalSign
             reference='"Signed by Ryan Cook, handed off to Grant Balfour & Sean Doolittle. Turned into buttons — see the Press section for the story." &mdash; @greatestsignmaker'
