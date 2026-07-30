@@ -16,6 +16,7 @@ interface PressItem {
   date: string;
   paragraphs: React.ReactNode[];
   liveUrl?: string;
+  liveUrlLabel?: string;
   archiveUrl?: string;
   imageUrl?: string;
   imageAlt?: string;
@@ -93,6 +94,22 @@ const PRESS_ITEMS: PressItem[] = [
     secondImageCaption: "This is the original full-sized sign, not the mini cheer card — the one that caught the A's front office's eye in the first place.",
   },
   {
+    title: "Batting Practice at the Coliseum",
+    outlet: 'Medium',
+    date: "July 22, 2017",
+    paragraphs: [
+      `In July 2017, the A's front office invited me out for something better than a press mention — an actual invitation to take batting practice on Rickey Henderson Field. It started with a voicemail and a follow-up email from Dave Kaval's office, part of a broader push by the team to make season ticket members feel like more than seat-fillers. My wife and I signed liability waiver forms at the gate, walked in without going through security for once, and even got to bring in a can of Coke — a felony on any normal gameday.`,
+      `I brought two signs along: Brick Tamland's "Let's Go Oakland" (the one that started this whole thing back in 2012) and a newer GOAT sign honoring Rickey Henderson. Batting order that day put me at #59 of 65 — plenty of time to shag balls in the outfield and take photos before my turn. An A's staff photographer named Nicola caught the actual swings; I introduced myself to the on-field announcer with my usual line ("Ian, rhymes with lion"), faced about fifteen pitches, fouled off a few, and made contact with the rest. No home run, no phenom contract — but I wrote the whole thing up on Medium that week, and it's still one of my favorite days at the Coliseum, sign or no sign.`,
+    ],
+    liveUrl: 'https://medium.com/greatest-sign-maker/batting-practice-at-the-coliseum-acd11939c428',
+    liveUrlLabel: 'Read on Medium',
+    imageUrl: '/images/batting-practice-coliseum-2017.jpg',
+    imageAlt: "Ian taking batting practice on Rickey Henderson Field at the Oakland Coliseum, July 22, 2017",
+    secondImageUrl: '/images/batting-practice-dugout-brick-tamland-2017.jpg',
+    secondImageAlt: "Ian sitting in the A's dugout with his Brick Tamland 'Let's Go Oakland' sign during the batting practice event",
+    secondImageCaption: "Stashing gear in the dugout with my buddy Brick Tamland before my turn in the batting order.",
+  },
+  {
     title: '"Ian (the Greatest Sign Maker) Saberhagen!!" — 50th Anniversary STM Stories',
     outlet: "Oakland Athletics — Season Ticket Member Newsletter",
     byline: "Oakland Athletics Front Office",
@@ -100,10 +117,37 @@ const PRESS_ITEMS: PressItem[] = [
     paragraphs: [
       `This one's a step up from blog coverage — an official feature from the A's front office themselves, part of a recurring "50th Anniversary STM Stories" segment celebrating the club's 50th season in Oakland by spotlighting Season Ticket Members. Getting picked for a segment like that meant the organization itself, not just a corner of the internet, had decided my sign-making was part of the fan story worth telling.`,
       `And they misspelled my last name while doing it — "Ian (the Greatest Sign Maker) Saberhagen," highlighted right there in the original. I'll be honest, I loved it. "Saberhagen" happens to belong to a real Hall of Fame-caliber pitcher, Bret Saberhagen, so getting knighted with a Cy Young winner's surname by accident felt like a bonus, not a mistake.`,
-      `The feature ran a Q&A alongside a photo of me on the field holding a "CAN YOU HANDLE THIS?" Hall of Fame Race picket sign during the 8th-inning stretch — which I named as my favorite A's memory when they asked. I also talked about what actually keeps me in the season ticket program: the right-field bleachers as their own community (I still bring up the spontaneous "I believe in Stephen Vogt!" chant as proof fans build these moments themselves), and the on-field perks that come with membership — meeting players, playing catch on the grass after the game, and best of all, taking batting practice at the Coliseum.`,
+      `The feature ran a Q&A alongside a photo of me on the field holding a "CAN YOU HANDLE THIS?" Hall of Fame Race picket sign during the 8th-inning stretch — which I named as my favorite A's memory when they asked. I also talked about what actually keeps me in the season ticket program: the right-field bleachers as their own community (I still bring up the spontaneous "I believe in Stephen Vogt!" chant as proof fans build these moments themselves — I'd uploaded a YouTube video of the bleachers doing that chant on July 3, 2014, and the A's organization actually reached out for permission to use the sound byte from it in a Stephen Vogt bobblehead giveaway; as a thank-you, they had the bobblehead autographed by Vogt himself and gave it to me), and the on-field perks that come with membership — meeting players, playing catch on the grass after the game, and best of all, taking batting practice at the Coliseum.`,
     ],
     imageUrl: "/images/as-newsletter-feature-2018.jpg",
     imageAlt: "Screenshot of the Oakland Athletics '50th Anniversary STM Stories' newsletter segment featuring Ian, with his last name misspelled 'Saberhagen,' alongside a photo of him holding a Hall of Fame Race picket sign on the field",
+  },
+  {
+    title: "A's Fans Sell Out the Coliseum",
+    outlet: 'MLB.com — Cut4',
+    date: 'October 2, 2019',
+    paragraphs: [
+      `Weeks after the "Careless Whisper" piece — five years later, anyway — Cut4 caught actual footage of the fandom itself. A 30-second video titled "A's fans sell out the Coliseum" ran under the Cut4 tag, shot during the American League Wild Card Game against the Tampa Bay Rays on October 2, 2019. No interview, no sign close-up, just crowd noise and energy — but my wife and I are in it, roughly 17 seconds in, cheering along with the rest of a sold-out Coliseum. She posted about it on Instagram the next day: "Tough loss and our voices are both a little hoarse but we had a great time."`,
+      `It capped off a stretch that season where I kept ending up on camera without trying to. A month earlier, on September 5, 2019, we finally got to sit in the Diamond Level seats behind home plate for the first time — and I caught myself in the corner of the actual TV broadcast at the exact moment of the game's final out, real score bug and all. Neither moment involved a sign. Just years of being a loud, visible fan finally catching up with the cameras on its own.`,
+    ],
+    liveUrl: 'https://www.mlb.com/athletics/video/a-s-fans-sell-out-the-coliseum',
+    liveUrlLabel: 'Watch on MLB.com',
+    imageUrl: '/images/mlb-cut4-fans-sell-out-coliseum-2019.jpg',
+    imageAlt: "Video still from MLB.com Cut4's 'A's fans sell out the Coliseum,' AL Wild Card Game, October 2, 2019",
+    images: [
+      {
+        url: '/images/coliseum-crowd-sign-oct2019.jpg',
+        alt: "Ian and his wife cheering in the crowd at the AL Wild Card Game, holding a 'Let's Go Oakland' sign, October 3, 2019",
+        caption: "Cindy (@cnaks25) on Instagram · Oct 3, 2019",
+        linkUrl: 'https://www.instagram.com/p/B3K6MmjgWJYFnTypRTqkHCqpmH0Gd43z_Pc9hI0/',
+      },
+      {
+        url: '/images/tv-broadcast-final-out-sept2019.jpg',
+        alt: "Live TV broadcast screenshot showing Ian cheering in the corner of the screen at the moment of the game's final out, September 5, 2019",
+        caption: "Ian on Instagram · Sept 5, 2019",
+        linkUrl: 'https://www.instagram.com/p/B2BTy2iASxh/',
+      },
+    ],
   },
   {
     title: "Recognition on Twitter",
@@ -255,7 +299,7 @@ const Press: React.FC = () => {
                       className="flex items-center gap-2 bg-athletics-gold text-athletics-green px-5 py-2 rounded-full font-bold text-sm hover:bg-white transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Read on MLB.com
+                      {item.liveUrlLabel || 'Read on MLB.com'}
                     </a>
                   )}
                   {item.archiveUrl && (
