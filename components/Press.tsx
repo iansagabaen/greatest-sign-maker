@@ -80,7 +80,7 @@ const PRESS_ITEMS: PressItem[] = [
         </a>{' '}
         — right as the song was having an odd cultural moment thanks to a viral video of a shirtless prankster playing it on saxophone in public. Cut4's piece sets that scene first: every time Reddick came to the plate at the Coliseum, the right-field bleachers would rise up and mime playing air-saxophone along with the PA.
       </>,
-      `That's where I came in. The A's organization brought me in directly — the piece calls me a "Cut4 friend" at that point, which tells you Cut4 already considered me a recurring character in their coverage, not a one-off. Together with the team, I designed an official "Careless Whisper" cheer card, handed out to 5,000 fans at the Coliseum on Memorial Day 2014.`,
+      `That's where I came in — with my own full-sized version of the sign, the one in the photo below. The A's front office saw it and asked my permission to shrink it down into a giveaway card; the piece calls me a "Cut4 friend" at that point, which tells you Cut4 already considered me a recurring character in their coverage, not a one-off. Together with the team, that sign became an official "Careless Whisper" cheer card, handed out to 5,000 fans at the Coliseum on Memorial Day 2014.`,
       `Cut4 tracked me down for comment while I was on vacation in Alaska, which the piece treats as a small running joke. In my own words from the piece, the concept came together fast: I'd been in the right-field bleachers the night Reddick debuted the song, and once the #CarelessWhisper moment took off among A's fans, I sketched a few directions before landing on the final image — dramatic clouds in the background, a composite portrait blending Reddick's face with George Michael's, and the saxophone itself as the central icon.`,
       `The piece also captures the practical reasoning behind making it a printed card rather than a novelty prop: I referenced my friend Omar and his interactive Coco Crisp "Afro sign" as prior inspiration, then explained that once fans were already miming invisible saxophones, an inflatable toy sax was the obvious next step — except a printed card accomplished the same bit with less inflating and was much easier to actually carry into a stadium. Written by Mike Bertha, the piece treats this less as a profile and more as a fun sidebar on a specific, weird moment of A's fan culture — with me as the person who gave that moment a physical object.`,
     ],
@@ -89,8 +89,8 @@ const PRESS_ITEMS: PressItem[] = [
     imageUrl: '/images/careless-whisper-cheer-card.jpg',
     imageAlt: "The 'Careless Whisper' Josh Reddick cheer card given out at the Coliseum, Memorial Day 2014",
     secondImageUrl: '/images/reddick-tv-broadcast.jpg',
-    secondImageAlt: "Live MLB broadcast screenshot showing Ian holding up the 'Careless Whisper' cheer card in the bleachers as fans wave A's flags",
-    secondImageCaption: "Proof of impact: caught on the live broadcast holding the actual card in the bleachers.",
+    secondImageAlt: "Live MLB broadcast screenshot showing Ian holding up his original full-sized 'Careless Whisper' sign in the bleachers as fans wave A's flags",
+    secondImageCaption: "This is the original full-sized sign, not the mini cheer card — the one that caught the A's front office's eye in the first place.",
   },
   {
     title: '"Ian (the Greatest Sign Maker) Saberhagen!!" — 50th Anniversary STM Stories',
@@ -110,7 +110,36 @@ const PRESS_ITEMS: PressItem[] = [
     date: "2014–2018",
     paragraphs: [
       `Not everything worth keeping came as a formal article. A few individual tweets over the years are just as good a marker of how far this whole thing traveled — proof that it wasn't just Cut4 and the team's own PR account being nice to me, but independent, unprompted recognition from people who had no reason to say anything at all.`,
-      `First, in May 2014, Vic Tafur — the San Francisco Chronicle's A's beat writer — quote-tweeted Cut4's "Careless Whisper" piece with a simple "nice job @Gr8estSignMaker," a real beat reporter vouching for the work in his own feed. A year later, the Athletics' own official account went further, tweeting straight at me that I "really is the Greatest Sign Maker," with a four-photo collage as the "PROOF." And in March 2018, when the team's newsletter (above) misspelled my last name as "Saberhagen," I couldn't resist screenshotting my own reaction — equal parts thank-you and correction, and the same tweet that pins down the newsletter's actual date.`,
+      <>
+        First, in May 2014, Vic Tafur — the San Francisco Chronicle's A's beat writer — quote-tweeted Cut4's "Careless Whisper" piece with{' '}
+        <a
+          href="https://x.com/VicTafur/status/471910804946579456"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-athletics-gold underline hover:text-white transition-colors"
+        >
+          a simple "nice job @Gr8estSignMaker"
+        </a>
+        , a real beat reporter vouching for the work in his own feed. A year later, the Athletics' own official account went further,{' '}
+        <a
+          href="https://x.com/Athletics/status/604156534201831424"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-athletics-gold underline hover:text-white transition-colors"
+        >
+          tweeting straight at me that I "really is the Greatest Sign Maker,"
+        </a>{' '}
+        with a four-photo collage as the "PROOF." And in March 2018, when the team's newsletter (above) misspelled my last name as "Saberhagen,"{' '}
+        <a
+          href="https://x.com/Gr8estSignMaker/status/979236140703039488"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-athletics-gold underline hover:text-white transition-colors"
+        >
+          I couldn't resist screenshotting my own reaction
+        </a>{' '}
+        — equal parts thank-you and correction, and the same tweet that pins down the newsletter's actual date.
+      </>,
       `All three are captured here as real screenshots, not paraphrases — Twitter/X is exactly the kind of platform that could go down or lock me out one day, so these are worth having somewhere permanent.`,
     ],
     images: [
@@ -199,7 +228,7 @@ const Press: React.FC = () => {
                       <img
                         src={img.url}
                         alt={img.alt}
-                        className="w-full h-auto object-cover"
+                        className="w-full h-64 object-cover"
                       />
                       {img.caption && (
                         <p className="text-xs font-mono uppercase tracking-widest text-white/50 px-3 py-2 bg-black/20">

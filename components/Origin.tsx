@@ -41,7 +41,7 @@ const Origin: React.FC = () => {
           <div className="absolute -inset-4 bg-athletics-gold/20 rounded-lg transform rotate-3"></div>
           
           {/* Image representing the era */}
-          <div className="relative group overflow-hidden rounded-lg shadow-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500">
+          <div className="relative overflow-hidden rounded-lg shadow-2xl transform -rotate-1">
             <img
               src={IMAGES.originFeature}
               alt="The invite graphic for Ian's April 2013 first pitch"
