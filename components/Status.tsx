@@ -13,13 +13,12 @@ const Status: React.FC = () => {
              <div className="relative group">
                 <div className="absolute inset-0 bg-athletics-gold transform translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
                 <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border-4 border-white">
-                    <img 
+                    <img
                       src={IMAGES.statusFeature}
                       alt="Ian Sagabaen in an A's cap and jersey, holding an #OAKtober sign in the right-field bleachers at the Coliseum"
-                      className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" 
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-athletics-green/20 mix-blend-multiply"></div>
-                    
+
                     <div className="absolute bottom-0 left-0 bg-athletics-gold px-4 py-2">
                       <span className="text-athletics-green font-bold text-xs uppercase tracking-widest">
                         Right Field Bleachers
@@ -35,8 +34,8 @@ const Status: React.FC = () => {
                What started as a design project turned into a phenomenon. I became a fixture in the right-field bleachers, known for bringing a fresh, relevant sign to every game.
              </p>
              <ul className="space-y-8">
-               <li className="flex gap-4 group">
-                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit group-hover:bg-athletics-gold group-hover:text-athletics-green transition-colors">
+               <li className="flex gap-4">
+                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit">
                     <Camera className="w-6 h-6" />
                  </div>
                  <div>
@@ -44,8 +43,8 @@ const Status: React.FC = () => {
                    <p className="text-base text-gray-500 leading-relaxed">Fans treated spotting me like spotting a mascot, posting #GreatestSignMaker sightings across social media.</p>
                  </div>
                </li>
-               <li className="flex gap-4 group">
-                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit group-hover:bg-athletics-gold group-hover:text-athletics-green transition-colors">
+               <li className="flex gap-4">
+                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit">
                     <Users className="w-6 h-6" />
                  </div>
                  <div>
@@ -53,8 +52,8 @@ const Status: React.FC = () => {
                    <p className="text-base text-gray-500 leading-relaxed">The Front Office took notice. I moved from buying tickets to receiving invites to restricted areas of the stadium.</p>
                  </div>
                </li>
-               <li className="flex gap-4 group">
-                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit group-hover:bg-athletics-gold group-hover:text-athletics-green transition-colors">
+               <li className="flex gap-4">
+                 <div className="bg-athletics-green text-white p-3 rounded-full h-fit">
                     <BadgeCheck className="w-6 h-6" />
                  </div>
                  <div>
