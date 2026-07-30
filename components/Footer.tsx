@@ -14,13 +14,17 @@ const Footer: React.FC = () => {
     const formData = new FormData(form);
     const body = new URLSearchParams(formData as any).toString();
     try {
-      await fetch('/', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body,
       });
+      if (!response.ok) {
+        throw new Error(`Form submission failed: ${response.status}`);
+      }
       setStatus('success');
-    } catch {
+    } catch (err) {
+      console.error('Feedback form submission failed:', err);
       setStatus('error');
     }
   };

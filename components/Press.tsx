@@ -4,8 +4,8 @@ import { Newspaper, ExternalLink, Archive } from 'lucide-react';
 
 interface PressItem {
   title: string;
-  outlet: string;
-  byline: string;
+  outlet?: string;
+  byline?: string;
   date: string;
   paragraphs: string[];
   liveUrl?: string;
@@ -30,6 +30,16 @@ const PRESS_ITEMS: PressItem[] = [
     ],
     imageUrl: '/images/original-mlb-post-2012.jpg',
     imageAlt: "Screenshot of the original April 10, 2012 MLB.com Cut4 post, 'Ian Sagabaen has to be greatest sign-maker in MLB history'",
+  },
+  {
+    title: "Giving Sean Doolittle His Own Pen Pal",
+    date: "Spring Training 2013",
+    paragraphs: [
+      `Not every milestone here came from a blog post — this one's just a good story on its own. The "Pen Pals" bullpen collage (in the Gallery above) got signed by Ryan Cook and handed around the bullpen by Grant Balfour, but it didn't stop there. I turned the design into a run of buttons and brought them to spring training in Arizona that year.`,
+      `I gave a few to Sean Doolittle in person, which is the photo above — no article, no byline, just a nice moment of a poster actually reaching the guys it was about.`,
+    ],
+    imageUrl: '/images/doolittle-pen-pals-buttons.jpg',
+    imageAlt: "Ian with A's reliever Sean Doolittle at spring training, holding up a 'Pen Pals' button made from the poster",
   },
   {
     title: "Step Inside the Studio of Baseball's Greatest Sign Maker",
@@ -99,7 +109,7 @@ const Press: React.FC = () => {
             >
               <div className="flex items-center gap-2 text-athletics-gold text-xs font-bold uppercase tracking-widest mb-4">
                 <Newspaper className="w-4 h-4" />
-                {item.outlet} &middot; {item.byline} &middot; {item.date}
+                {[item.outlet, item.byline, item.date].filter(Boolean).join(' · ')}
               </div>
               <h3 className="font-serif font-bold text-3xl md:text-4xl mb-6 leading-snug">{item.title}</h3>
 

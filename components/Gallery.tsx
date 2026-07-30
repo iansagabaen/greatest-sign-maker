@@ -5,37 +5,17 @@ interface SignProps {
   reference?: string;
   imageUrl: string;
   imageAlt: string;
-  secondImageUrl?: string;
-  secondImageAlt?: string;
 }
 
-const DigitalSign: React.FC<SignProps> = ({ reference, imageUrl, imageAlt, secondImageUrl, secondImageAlt }) => {
+const DigitalSign: React.FC<SignProps> = ({ reference, imageUrl, imageAlt }) => {
   return (
-    <div className="group perspective-1000 cursor-pointer">
-      <div className={`grid ${secondImageUrl ? 'grid-cols-2 gap-1' : 'grid-cols-1'}`}>
-        <div className="relative aspect-[4/3] shadow-xl overflow-hidden transition-all duration-500 transform group-hover:rotate-y-12 group-hover:scale-105">
-          <img
-            src={imageUrl}
-            alt={imageAlt}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-
-          {/* Shine Effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-        </div>
-
-        {secondImageUrl && (
-          <div className="relative aspect-[4/3] shadow-xl overflow-hidden transition-all duration-500 transform group-hover:rotate-y-12 group-hover:scale-105">
-            <img
-              src={secondImageUrl}
-              alt={secondImageAlt || imageAlt}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-
-            {/* Shine Effect */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-          </div>
-        )}
+    <div className="group">
+      <div className="shadow-xl overflow-hidden">
+        <img
+          src={imageUrl}
+          alt={imageAlt}
+          className="w-full h-auto"
+        />
       </div>
 
       {/* Reference Caption */}
@@ -74,11 +54,9 @@ const Gallery: React.FC = () => {
             imageAlt="Photoshopped Billy Beane 'Executive of the Decade' baseball card"
           />
           <DigitalSign
-            reference='"Signed by Ryan Cook, handed off to Grant Balfour & Sean Doolittle. Turned into buttons, gave a few to Doolittle himself." &mdash; @greatestsignmaker'
+            reference='"Signed by Ryan Cook, handed off to Grant Balfour & Sean Doolittle. Turned into buttons — see the Press section for the story." &mdash; @greatestsignmaker'
             imageUrl="/images/pen-pals-bullpen.jpg"
             imageAlt="'Pen Pals' collage of 2013 A's bullpen pitchers, signed by Grant Balfour and teammates"
-            secondImageUrl="/images/doolittle-pen-pals-buttons.jpg"
-            secondImageAlt="Ian with A's reliever Sean Doolittle at spring training, holding up a 'Pen Pals' button made from the poster"
           />
           <DigitalSign
             reference="Bartolo Colon pun poster — caught the A's front office's eye, leading to a guest-speaker invite at Fan Fest"
