@@ -15,7 +15,7 @@ const Status: React.FC = () => {
                 <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border-4 border-white">
                     <img 
                       src={IMAGES.statusFeature}
-                      alt="Fans in the bleachers" 
+                      alt="Ian Sagabaen in an A's cap and jersey, holding an #OAKtober sign in the right-field bleachers at the Coliseum"
                       className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" 
                     />
                     <div className="absolute inset-0 bg-athletics-green/20 mix-blend-multiply"></div>

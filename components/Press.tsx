@@ -12,6 +12,9 @@ interface PressItem {
   archiveUrl?: string;
   imageUrl?: string;
   imageAlt?: string;
+  secondImageUrl?: string;
+  secondImageAlt?: string;
+  secondImageCaption?: string;
   sourceNote?: string;
 }
 
@@ -58,6 +61,9 @@ const PRESS_ITEMS: PressItem[] = [
     archiveUrl: 'https://web.archive.org/web/20260708050813/https://www.mlb.com/cut4/ill-never-run-on-reddick-again-as-give-out-careless-whisper-cheer-cards/c-77017428',
     imageUrl: '/images/careless-whisper-cheer-card.jpg',
     imageAlt: "The 'Careless Whisper' Josh Reddick cheer card given out at the Coliseum, Memorial Day 2014",
+    secondImageUrl: '/images/reddick-tv-broadcast.jpg',
+    secondImageAlt: "Live MLB broadcast screenshot showing Ian holding up the 'Careless Whisper' cheer card in the bleachers as fans wave A's flags",
+    secondImageCaption: "Proof of impact: caught on the live broadcast holding the actual card in the bleachers.",
   },
 ];
 
@@ -93,6 +99,21 @@ const Press: React.FC = () => {
                     alt={item.imageAlt || item.title}
                     className="w-full h-auto object-cover"
                   />
+                </div>
+              )}
+
+              {item.secondImageUrl && (
+                <div className="mb-8 rounded-lg overflow-hidden border border-white/10 shadow-xl">
+                  <img
+                    src={item.secondImageUrl}
+                    alt={item.secondImageAlt || item.title}
+                    className="w-full h-auto object-cover"
+                  />
+                  {item.secondImageCaption && (
+                    <p className="text-xs font-mono uppercase tracking-widest text-white/50 px-4 py-3 bg-black/20">
+                      {item.secondImageCaption}
+                    </p>
+                  )}
                 </div>
               )}
 

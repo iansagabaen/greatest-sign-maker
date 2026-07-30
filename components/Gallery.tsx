@@ -2,66 +2,23 @@ import React from 'react';
 import { SectionId } from '../types';
 
 interface SignProps {
-  title: string;
-  subtitle?: string;
   reference?: string;
-  variant: 'frankie' | 'lastella' | 'coco' | 'vogt' | 'generic';
-  imageUrl?: string;
-  imageAlt?: string;
+  imageUrl: string;
+  imageAlt: string;
 }
 
-const DigitalSign: React.FC<SignProps> = ({ title, subtitle, reference, variant, imageUrl, imageAlt }) => {
-  const getStyles = () => {
-    switch (variant) {
-      case 'frankie':
-        return "bg-white text-black border-4 border-black font-sans font-black";
-      case 'lastella':
-        return "bg-athletics-gold text-athletics-green border-4 border-athletics-green font-serif italic";
-      case 'coco':
-        return "bg-athletics-green text-athletics-gold border-4 border-white font-sans font-bold tracking-widest";
-      case 'vogt':
-        return "bg-black text-white border-4 border-white font-serif uppercase";
-      default:
-        return "bg-white text-athletics-green border-4 border-athletics-green font-serif";
-    }
-  };
-
+const DigitalSign: React.FC<SignProps> = ({ reference, imageUrl, imageAlt }) => {
   return (
     <div className="group perspective-1000 cursor-pointer">
-      <div className={`
-        relative aspect-[4/3] shadow-xl overflow-hidden
-        transition-all duration-500 transform group-hover:rotate-y-12 group-hover:scale-105
-        ${imageUrl ? '' : `p-6 flex flex-col items-center justify-center text-center ${getStyles()}`}
-      `}>
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt={imageAlt || title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        ) : null}
+      <div className="relative aspect-[4/3] shadow-xl overflow-hidden transition-all duration-500 transform group-hover:rotate-y-12 group-hover:scale-105">
+        <img
+          src={imageUrl}
+          alt={imageAlt}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
         {/* Shine Effect */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-
-        {!imageUrl && (
-          <>
-            <h3 className="text-4xl md:text-5xl leading-none z-10 drop-shadow-sm">
-              {title}
-            </h3>
-            {subtitle && (
-              <>
-                <div className="w-12 h-1 bg-current my-3 opacity-50"></div>
-                <p className="text-xl md:text-2xl z-10 uppercase tracking-wide">{subtitle}</p>
-              </>
-            )}
-
-            {/* Spec Label */}
-            <div className="absolute bottom-2 right-2 text-[10px] opacity-40 font-sans font-normal tracking-tighter">
-              20" x 30" FOAM CORE
-            </div>
-          </>
-        )}
       </div>
 
       {/* Reference Caption */}
@@ -84,62 +41,31 @@ const Gallery: React.FC = () => {
             The Digital Archive
           </h2>
           <p className="text-athletics-green/70 font-sans max-w-xl mx-auto">
-            A digital recreation of the foam core collection. 
+            A digital recreation of the foam core collection.
             <br/><span className="text-xs uppercase tracking-widest opacity-60">Click specific signs to see original context (Coming Soon)</span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           <DigitalSign
-            title="Brick Tamland"
-            subtitle="LET'S GO OAKLAND"
-            variant="generic"
             reference='"One of the very first signs I&rsquo;ve ever made, and definitely my most popular." &mdash; @greatestsignmaker'
             imageUrl="/images/brick-tamland-lets-go-oakland.jpg"
             imageAlt="Brick Tamland (Anchorman) 'LET'S GO OAKLAND' poster, in an A's tie"
           />
           <DigitalSign
-            title="Billy Beane"
-            subtitle="Executive of the Decade"
-            variant="generic"
             reference="Fictional baseball card — led to meeting Beane in person at Fan Fest"
             imageUrl="/images/billy-beane-card.jpg"
             imageAlt="Photoshopped Billy Beane 'Executive of the Decade' baseball card"
           />
           <DigitalSign
-            title="Pen Pals"
-            variant="generic"
             reference='"Signed by Ryan Cook, handed off to Grant Balfour & Sean Doolittle." &mdash; @greatestsignmaker'
             imageUrl="/images/pen-pals-bullpen.jpg"
             imageAlt="'Pen Pals' collage of 2013 A's bullpen pitchers, signed by Grant Balfour and teammates"
           />
           <DigitalSign
-            title="FRANKIE"
-            subtitle="SAY RELAX" 
-            variant="frankie" 
-            reference="Re: Frankie Montas / Zoolander"
-          />
-          <DigitalSign 
-            title="La Stella!" 
-            variant="lastella" 
-            reference="Re: Tommy La Stella / Streetcar Named Desire"
-          />
-          <DigitalSign 
-            title="I BELIEVE" 
-            subtitle="IN STEPHEN VOGT" 
-            variant="vogt" 
-            reference="Re: Stephen Vogt / US Soccer Chant"
-          />
-          <DigitalSign 
-            title="I'M IN LOVE" 
-            subtitle="WITH THE COCO" 
-            variant="coco" 
-            reference="Re: Coco Crisp / O.T. Genasis"
-          />
-           <DigitalSign 
-            title="DOOOOO" 
-            variant="generic" 
-            reference="Re: Sean Doolittle"
+            reference="Bartolo Colon pun poster — caught the A's front office's eye, leading to a guest-speaker invite at Fan Fest"
+            imageUrl="/images/colon-semicolon-poster.jpg"
+            imageAlt="Split poster of A's pitcher Bartolo Colon captioned 'COLON' and 'SEMICOLON', a pun on his last name"
           />
           <div className="aspect-[4/3] flex items-center justify-center border-2 border-dashed border-athletics-green/30 rounded bg-transparent text-athletics-green/40">
              <div className="text-center">

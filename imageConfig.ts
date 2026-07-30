@@ -16,7 +16,7 @@ export const IMAGES = {
   originFeature: "/images/first-pitch-invite-2013.jpg",
   
   // The image in the "Legacy/Status" section (Crowd shot or you in bleachers)
-  statusFeature: "https://images.unsplash.com/photo-1504124630217-d8a9e41e1a02?q=80&w=1000&auto=format&fit=crop",
+  statusFeature: "/images/oaktober-bleachers.jpg",
 
   // (Optional) Image for the Story section if you choose to add it back
   storyPortrait: "https://picsum.photos/id/453/800/1000",
