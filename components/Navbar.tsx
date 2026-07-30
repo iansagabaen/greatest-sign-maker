@@ -35,16 +35,15 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <div 
-          className="flex items-center gap-2 cursor-pointer group" 
+        <div
+          className="flex items-center gap-2 cursor-pointer group"
           onClick={() => scrollToSection(SectionId.HERO)}
         >
-          <div className="w-10 h-10 bg-athletics-gold rounded-full flex items-center justify-center border-2 border-white group-hover:scale-110 transition-transform">
-            <span className="font-serif font-black text-athletics-green text-lg">GS</span>
-          </div>
-          <span className="font-serif font-bold text-xl tracking-wide text-white hidden md:block">
-            Greatest Sign Maker
-          </span>
+          <img
+            src="/logo.svg"
+            alt="Greatest Sign Maker"
+            className="w-10 h-10 bg-white rounded-md p-0.5 border-2 border-white group-hover:scale-110 transition-transform"
+          />
         </div>
 
         {/* Desktop Nav */}
