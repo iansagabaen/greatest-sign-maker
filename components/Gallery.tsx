@@ -85,6 +85,11 @@ const Gallery: React.FC = () => {
             imageUrl="/images/colon-semicolon-poster.jpg"
             imageAlt="Split poster of A's pitcher Bartolo Colon captioned 'COLON' and 'SEMICOLON', a pun on his last name"
           />
+          <DigitalSign
+            reference="An early fan-favorite — timed perfectly for Jed Lowrie's second stint with the A's"
+            imageUrl="/images/return-of-the-jed-lowrie.jpg"
+            imageAlt="'Return of the Jed Lowrie' poster, a Star Wars 'Return of the Jedi' pun with Darth Vader and Yoda composited onto A's infielder Jed Lowrie"
+          />
           <div className="aspect-[4/3] flex items-center justify-center border-2 border-dashed border-athletics-green/30 rounded bg-transparent text-athletics-green/40">
              <div className="text-center">
                <p className="font-serif italic">More from the archive...</p>
