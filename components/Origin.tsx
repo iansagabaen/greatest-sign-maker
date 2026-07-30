@@ -45,7 +45,7 @@ const Origin: React.FC = () => {
             <img
               src={IMAGES.originFeature}
               alt="The invite graphic for Ian's April 2013 first pitch"
-              className="w-full h-[500px] object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
