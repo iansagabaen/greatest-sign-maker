@@ -65,6 +65,20 @@ const PRESS_ITEMS: PressItem[] = [
     secondImageAlt: "Live MLB broadcast screenshot showing Ian holding up the 'Careless Whisper' cheer card in the bleachers as fans wave A's flags",
     secondImageCaption: "Proof of impact: caught on the live broadcast holding the actual card in the bleachers.",
   },
+  {
+    title: '"Ian (the Greatest Sign Maker) Saberhagen!!" — 50th Anniversary STM Stories',
+    outlet: "Oakland Athletics — Season Ticket Member Newsletter",
+    byline: "Oakland Athletics Front Office",
+    date: "circa 2017–18 (A's 50th Anniversary season in Oakland)",
+    paragraphs: [
+      `This one's a step up from blog coverage — an official feature from the A's front office themselves, part of a recurring "50th Anniversary STM Stories" segment celebrating the club's 50th season in Oakland by spotlighting Season Ticket Members. Getting picked for a segment like that meant the organization itself, not just a corner of the internet, had decided my sign-making was part of the fan story worth telling.`,
+      `And they misspelled my last name while doing it — "Ian (the Greatest Sign Maker) Saberhagen," highlighted right there in the original. I'll be honest, I loved it. "Saberhagen" happens to belong to a real Hall of Fame-caliber pitcher, Bret Saberhagen, so getting knighted with a Cy Young winner's surname by accident felt like a bonus, not a mistake.`,
+      `The feature ran a Q&A alongside a photo of me on the field holding a "CAN YOU HANDLE THIS?" Hall of Fame Race picket sign during the 8th-inning stretch — which I named as my favorite A's memory when they asked. I also talked about what actually keeps me in the season ticket program: the right-field bleachers as their own community (I still bring up the spontaneous "I believe in Stephen Vogt!" chant as proof fans build these moments themselves), and the on-field perks that come with membership — meeting players, playing catch on the grass after the game, and best of all, taking batting practice at the Coliseum.`,
+    ],
+    imageUrl: "/images/as-newsletter-feature-2018.jpg",
+    imageAlt: "Screenshot of the Oakland Athletics '50th Anniversary STM Stories' newsletter segment featuring Ian, with his last name misspelled 'Saberhagen,' alongside a photo of him holding a Hall of Fame Race picket sign on the field",
+    sourceNote: "This is a screenshot preserved from an Oakland A's Season Ticket Member email newsletter, not a public webpage — there's no live URL to link to, so the image itself is the only surviving copy.",
+  },
 ];
 
 const Press: React.FC = () => {
