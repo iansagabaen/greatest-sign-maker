@@ -68,7 +68,7 @@ const Gallery: React.FC = () => {
             imageUrl="/images/return-of-the-jed-lowrie.jpg"
             imageAlt="'Return of the Jed Lowrie' poster, a Star Wars 'Return of the Jedi' pun with Darth Vader and Yoda composited onto A's infielder Jed Lowrie"
           />
-          <div className="aspect-[4/3] flex items-center justify-center border-2 border-dashed border-athletics-green/30 rounded bg-transparent text-athletics-green/40">
+          <div className="self-start flex items-center justify-center border-2 border-dashed border-athletics-green/30 rounded bg-transparent text-athletics-green/40 py-16">
              <div className="text-center">
                <p className="font-serif italic">More from the archive...</p>
                <a href="https://instagram.com/greatestsignmaker" className="text-xs font-bold uppercase underline mt-2 block hover:text-athletics-green">Visit Instagram</a>
