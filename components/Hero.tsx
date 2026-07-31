@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
       <div className="absolute inset-0 z-0">
         <img 
           src={IMAGES.heroBackground}
-          alt="Oakland Coliseum at Night" 
+          alt="The Oakland Coliseum before a game, grounds crew prepping the infield"
           className="w-full h-full object-cover opacity-40 grayscale contrast-125"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-athletics-green/90 via-athletics-green/80 to-athletics-green"></div>

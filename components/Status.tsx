@@ -10,8 +10,8 @@ const Status: React.FC = () => {
         
         <div className="grid md:grid-cols-2 gap-16 items-center mb-12">
           <div className="order-2 md:order-1">
-             <div className="relative group">
-                <div className="absolute inset-0 bg-athletics-gold transform translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+             <div className="relative">
+                <div className="absolute inset-0 bg-athletics-gold transform translate-x-4 translate-y-4 rounded-lg"></div>
                 <div className="relative h-96 w-full rounded-lg overflow-hidden shadow-xl border-4 border-white bg-athletics-green/20">
                     <img
                       src={IMAGES.statusFeature}

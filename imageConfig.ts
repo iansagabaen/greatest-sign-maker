@@ -10,7 +10,7 @@
 
 export const IMAGES = {
   // The big background image behind the "Greatest Sign Maker" text
-  heroBackground: "https://images.unsplash.com/photo-1531663787764-dbd5117a31ac?q=80&w=2670&auto=format&fit=crop",
+  heroBackground: "/images/coliseum-hero-background.jpg",
   
   // The image in the "Origin Story" section (Pitcher's mound or first pitch)
   originFeature: "/images/first-pitch-invite-2013.jpg",
